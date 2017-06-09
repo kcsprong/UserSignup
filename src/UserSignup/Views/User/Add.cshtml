@@ -1,23 +1,27 @@
-﻿@model UserSignup.Models.User
+﻿@model UserSignup.ViewModels.AddUserViewModel
+
 <br />
 <form method="post" action="Add">
-    <p>@ViewBag.PasswordError @ViewBag.UsernameError</p>
+
+    <div asp-validation-summary="All"></div>
 
     <div class="form-element">
-        <label>UserName</label>
-        <input name="Username" value="@Model.Username" type="text" />
+        <label asp-for="Username"></label>
+        <input asp-for="Username" />
     </div>
     <div class="form-element">
-        <label>Email</label>
-        <input name="Email" value="@Model.Email" type="email" />
+        <label asp-for="Email"></label>
+        <input asp-for="Email"/>
     </div>
     <div class="form-element">
-        <label>Password</label>
-        <input name="Password" value="@Model.Password" type="password" />
+        <label asp-for="Password"></label>
+        <input asp-for="Password"/>
+
     </div>
     <div class="form-element">
-        <label>Verify Password</label>
-        <input name="verify" type="password" />
+        <label asp-for="Verify">Verify Password</label>
+        <input asp-for="Verify"/>
+
     </div>
 
     <input type="submit" value="Submit" />
